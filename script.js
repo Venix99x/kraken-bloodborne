@@ -1,1 +1,81 @@
-console.log("Bloodborne");
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    background: radial-gradient(
+        circle,
+        rgba(88,0,255,0.18) 0%,
+        rgba(10,10,10,1) 55%,
+        rgba(0,0,0,1) 100%
+    );
+
+    color: white;
+    font-family: Georgia, serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#moon {
+    position: absolute;
+    top: 18px;
+    font-size: 20px;
+    color: #5800FF;
+
+    text-shadow:
+        0 0 8px #5800FF,
+        0 0 16px #5800FF;
+}
+
+#cpuLabel {
+    font-size: 14px;
+    letter-spacing: 3px;
+    opacity: 0.8;
+}
+
+#cpuTemp {
+    font-size: 54px;
+    font-weight: bold;
+
+    text-shadow:
+        0 0 8px #5800FF,
+        0 0 16px #5800FF;
+}
+
+#bottomRow {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.sensor {
+    text-align: center;
+}
+
+.label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+#gpuTemp,
+#liqTemp {
+    font-size: 20px;
+}
+
+#rune {
+    position: absolute;
+    bottom: 15px;
+    font-size: 18px;
+
+    color: #5800FF;
+
+    text-shadow:
+        0 0 6px #5800FF,
+        0 0 12px #5800FF;
+}
