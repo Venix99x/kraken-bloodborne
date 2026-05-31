@@ -1,81 +1,27 @@
-body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
+window.nzxt = {
+    v1: {
+        onMonitoringDataUpdate: (data) => {
 
-    background: radial-gradient(
-        circle,
-        rgba(88,0,255,0.18) 0%,
-        rgba(10,10,10,1) 55%,
-        rgba(0,0,0,1) 100%
-    );
+            const cpu =
+                Math.round(data.cpus?.[0]?.temperature ?? 0);
 
-    color: white;
-    font-family: Georgia, serif;
+            const gpu =
+                Math.round(data.gpus?.[0]?.temperature ?? 0);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+            let liquid = "--";
 
-#moon {
-    position: absolute;
-    top: 18px;
-    font-size: 20px;
-    color: #5800FF;
+            if (data.kraken?.liquidTemperature) {
+                liquid = Math.round(data.kraken.liquidTemperature);
+            }
 
-    text-shadow:
-        0 0 8px #5800FF,
-        0 0 16px #5800FF;
-}
+            document.getElementById("cpuTemp").innerText =
+                `${cpu}°`;
 
-#cpuLabel {
-    font-size: 14px;
-    letter-spacing: 3px;
-    opacity: 0.8;
-}
+            document.getElementById("gpuTemp").innerText =
+                `${gpu}°`;
 
-#cpuTemp {
-    font-size: 54px;
-    font-weight: bold;
-
-    text-shadow:
-        0 0 8px #5800FF,
-        0 0 16px #5800FF;
-}
-
-#bottomRow {
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.sensor {
-    text-align: center;
-}
-
-.label {
-    font-size: 10px;
-    letter-spacing: 2px;
-    opacity: 0.7;
-}
-
-#gpuTemp,
-#liqTemp {
-    font-size: 20px;
-}
-
-#rune {
-    position: absolute;
-    bottom: 15px;
-    font-size: 18px;
-
-    color: #5800FF;
-
-    text-shadow:
-        0 0 6px #5800FF,
-        0 0 12px #5800FF;
-}
+            document.getElementById("liqTemp").innerText =
+                `${liquid}°`;
+        }
+    }
+};
