@@ -1,7 +1,7 @@
-body {
+html, body {
+    width: 240px;
+    height: 240px;
     margin: 0;
-    width: 100vw;
-    height: 100vh;
     overflow: hidden;
 
     background: radial-gradient(
