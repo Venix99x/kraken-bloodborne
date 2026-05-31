@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NZXT Test</title>
-    <style>
-        body{
-            margin:0;
-            background:black;
-            color:white;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            height:100vh;
-            font-family:Arial,sans-serif;
-            font-size:24px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <title>Bloodborne Kraken</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="temp">Waiting for NZXT...</div>
 
-    <script>
-        window.nzxt = {
-            v1: {
-                onMonitoringDataUpdate: (data) => {
-                    const cpuTemp = data.cpus?.[0]?.temperature ?? "--";
-                    document.getElementById("temp").innerText =
-                        `CPU ${Math.round(cpuTemp)}°`;
-                }
-            }
-        };
-    </script>
+<div id="moon">☾</div>
+
+<div id="cpuLabel">CPU</div>
+<div id="cpuTemp">--°</div>
+
+<div id="bottomRow">
+    <div class="sensor">
+        <div class="label">GPU</div>
+        <div id="gpuTemp">--°</div>
+    </div>
+
+    <div class="sensor">
+        <div class="label">LIQ</div>
+        <div id="liqTemp">--°</div>
+    </div>
+</div>
+
+<div id="rune">✠</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
